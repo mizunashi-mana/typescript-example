@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "preserveConstEnums": true,
+    "stripInternal": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": false,
+    "strictNullChecks": true,
+    "traceResolution": false,
+    "sourceMap": true,
+    "declaration": true,
+    "newLine": "LF",
+    "inlineSources": true,
+    "outDir": "dist"
+  },
+  "include": [
+    "lib/**/*.ts",
+    "test/**/*.ts"
+  ],
+  "exclude": [
+    "dist",
+    "coverage",
+    "node_modules"
+  ]
+}

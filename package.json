@@ -1,0 +1,28 @@
+{
+  "name": "typescript-example",
+  "version": "1.0.0",
+  "description": "TypeScript Example",
+  "main": "dist/lib/index.js",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "tsc --project tsconfig.json",
+    "test": "node dist/test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizunashi-mana/typescript-example.git"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": "Mizunashi Mana <mizunashi_mana@mma.club.uec.ac.jp>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mizunashi-mana/typescript-example/issues"
+  },
+  "homepage": "https://github.com/mizunashi-mana/typescript-example#readme",
+  "devDependencies": {
+    "@types/node": "0.0.2",
+    "typescript": "^2.1.4"
+  }
+}
