@@ -6,7 +6,13 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "tsc --project tsconfig.json",
-    "test": "node dist/test/index.js"
+    "lint": "tslint lib/**/*.ts test/**/*.ts",
+    "testonly": "mocha --compilers ts:ts-node/register,tsx:ts-node/register test/**/*.test.ts",
+    "pretest": "npm run lint",
+    "test": "npm run testonly",
+    "precoverage": "npm run build",
+    "coverage": "istanbul cover _mocha -- --require source-map-support/register ./dist/test/**/*.test.js",
+    "postcoverage": "remap-istanbul -i coverage/coverage.json -o coverage/ts-lcov-report -t html"
   },
   "repository": {
     "type": "git",
@@ -22,7 +28,14 @@
   },
   "homepage": "https://github.com/mizunashi-mana/typescript-example#readme",
   "devDependencies": {
+    "@types/mocha": "^2.2.33",
     "@types/node": "0.0.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "remap-istanbul": "^0.7.0",
+    "source-map-support": "^0.4.6",
+    "ts-node": "^1.7.2",
+    "tslint": "^4.0.2",
     "typescript": "^2.1.4"
   }
 }

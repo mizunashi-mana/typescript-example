@@ -1,4 +1,1 @@
-import * as jsLib from './js-lib';
-
-jsLib.testFunc();
-
+console.log('Hello, World');
