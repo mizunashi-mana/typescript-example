@@ -5,14 +5,14 @@
   "main": "dist/lib/index.js",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "tsc --project tsconfig.json",
-    "lint": "tslint lib/**/*.ts test/**/*.ts",
-    "testonly": "mocha --compilers ts:ts-node/register,tsx:ts-node/register test/**/*.test.ts",
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "clean": "gulp clean",
+    "lint": "gulp lint",
+    "testonly": "gulp test --production",
     "pretest": "npm run lint",
-    "test": "npm run testonly",
-    "precoverage": "npm run build",
-    "coverage": "istanbul cover _mocha -- --require source-map-support/register ./dist/test/**/*.test.js",
-    "postcoverage": "remap-istanbul -i coverage/coverage.json -o coverage/ts-lcov-report -t html"
+    "test": "gulp test",
+    "coverage": "gulp coverage"
   },
   "repository": {
     "type": "git",
@@ -30,12 +30,24 @@
   "devDependencies": {
     "@types/mocha": "^2.2.33",
     "@types/node": "0.0.2",
+    "coffee-script": "^1.12.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-istanbul": "^1.1.1",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-mocha": "^3.0.1",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-tslint": "^7.0.1",
+    "gulp-typescript": "^3.1.3",
     "istanbul": "^0.4.5",
+    "merge2": "^1.0.2",
     "mocha": "^3.2.0",
     "remap-istanbul": "^0.7.0",
+    "run-sequence": "^1.2.2",
     "source-map-support": "^0.4.6",
     "ts-node": "^1.7.2",
     "tslint": "^4.0.2",
-    "typescript": "^2.1.4"
+    "typescript": "^2.1.4",
+    "yargs": "^6.5.0"
   }
 }
